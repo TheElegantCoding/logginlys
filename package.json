@@ -1,0 +1,43 @@
+{
+  "name": "loglys",
+  "description": "📦️",
+  "author": "Luis Monsalve",
+  "version": "1.0.0",
+  "homepage": "https://github.com/TheElegantCoding/loglys#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheElegantCoding/loglys.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheElegantCoding/loglys/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["./dist"],
+  "engines": {
+    "node": ">=22.17.0",
+    "bun": ">=1.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow bun",
+    "test": "bun --watch src/index.ts",
+    "lint": "eslint . --fix ",
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "eslint-config-universal-code": "^1.0.10",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.2"
+  }
+}
