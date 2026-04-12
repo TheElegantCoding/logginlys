@@ -1,6 +1,6 @@
 {
-  "name": "loglys",
-  "description": "📦️",
+  "name": "logginlys",
+  "description": "📦️ A lightweight, high-performance TypeScript logger with automatic environment detection for consistent ANSI and CSS styling in Node.js and Browser.",
   "author": "Luis Monsalve",
   "version": "1.0.0",
   "homepage": "https://github.com/TheElegantCoding/loglys#readme",
@@ -8,6 +8,16 @@
     "type": "git",
     "url": "git+https://github.com/TheElegantCoding/loglys.git"
   },
+  "keywords": [
+    "logger",
+    "logging",
+    "typescript",
+    "browser-logs",
+    "node-logger",
+    "isomorphic-logger",
+    "debug",
+    "console"
+  ],
   "bugs": {
     "url": "https://github.com/TheElegantCoding/loglys/issues"
   },
