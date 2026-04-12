@@ -8,6 +8,7 @@
       "@src/*": ["./src/*"]
     },
     "resolveJsonModule": true,
+    "types": ["node"],
     "ignoreDeprecations": "6.0",
     "strict": true,
     "strictBindCallApply": true,
@@ -38,6 +39,6 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "eslint.config.js"],
   "exclude": ["node_modules", "dist"]
 }
