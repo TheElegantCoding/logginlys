@@ -1,124 +1,187 @@
-const ICON = {
-  CHECK: '\uf00c',
-  ERROR: '\uf00d',
-  INFO: '\uf05a',
-  WARNING: '\uf071',
-  DEBUG: '\ued7b',
-  HTTP: '\udb81\udd9f',
-  LOG: '\uf03a',
-  ROCKET: '\uf135'
+const icon = {
+  check: '\uf00c',
+  error: '\uf00d',
+  info: '\uf05a',
+  warning: '\uf071',
+  debug: '\ued7b',
+  http: '\udb81\udd9f',
+  log: '\uf03a',
+  rocket: '\uf135'
 };
 
-const EMOJI = {
-  CHECK: '✅',
-  ERROR: '❌',
-  INFO: 'ℹ️',
-  WARNING: '⚠️',
-  HTTP: '🌐',
-  DEBUG: '🪲',
-  LOG: '📋',
-  ROCKET: '🚀'
+const emoji = {
+  check: '✅',
+  error: '❌',
+  info: 'ℹ️',
+  warning: '⚠️',
+  http: '🌐',
+  debug: '🪲',
+  log: '📋',
+  rocket: '🚀'
 };
 
-const COLORS = {
-  ANSI: {
-    BLUE: '\u001b[34m',
-    GREEN: '\u001b[32m',
-    YELLOW: '\u001b[33m',
-    RED: '\u001b[31m',
-    PURPLE: '\u001b[35m',
-    GREY: '\u001b[90m',
-    CYAN: '\u001b[36m',
-    BG_BLUE: '\u001b[44;1;37m',
-    BG_GREEN: '\u001b[42;1;37m',
-    BG_CYAN: '\u001b[46;1;37m',
-    BG_YELLOW: '\u001b[43;1;37m',
-    BG_RED: '\u001b[41;1;37m',
-    BG_PURPLE: '\u001b[45;1;37m',
-    BG_GREY: '\u001b[100;1;37m',
-    RESET: '\u001b[0m'
+const color = {
+  ansi: {
+    color: {
+      blue: '\u001b[34m',
+      green: '\u001b[32m',
+      azure: '\u001b[94m',
+      yellow: '\u001b[33m',
+      red: '\u001b[31m',
+      purple: '\u001b[35m',
+      grey: '\u001b[90m',
+      cyan: '\u001b[36m',
+      white: '\u001b[37m',
+      reset: '\u001b[0m'
+    },
+    bg: {
+      blue: '\u001b[44;1;37m',
+      green: '\u001b[42;1;37m',
+      azure: '\u001b[104;1;37m',
+      cyan: '\u001b[46;1;37m',
+      yellow: '\u001b[43;1;37m',
+      red: '\u001b[41;1;37m',
+      purple: '\u001b[45;1;37m',
+      grey: '\u001b[100;1;37m'
+    }
   },
-  CSS: {
-    BLUE: '#3498db',
-    GREEN: '#2ecc71',
-    YELLOW: '#f1c40f',
-    RED: '#e74c3c',
-    PURPLE: '#9b59b6',
-    CYAN: '#1abc9c',
-    GREY: '#95a5a6'
+  css: {
+    color: {
+      blue: '#60a5fa',
+      green: '#4ade80',
+      azure: '#38bdf8',
+      yellow: '#facc15',
+      red: '#f87171',
+      purple: '#c084fc',
+      cyan: '#06b6d4',
+      white: '#ffffff',
+      grey: '#a3a3a3'
+    },
+    bg: {
+      blue: '#2563eb',
+      green: '#16a34a',
+      azure: '#0284c7',
+      yellow: '#ca8a04',
+      red: '#dc2626',
+      purple: '#9333ea',
+      cyan: '#0891b2',
+      white: '#ffffff',
+      grey: '#525252'
+    }
   }
 };
 
-const DEFAULT_LOGGER = {
-  ERROR: {
-    level: 'ERROR',
-    icon: ICON.ERROR,
-    emoji: EMOJI.ERROR,
-    color: COLORS.CSS.RED,
-    ansi: COLORS.ANSI.RED,
-    bgAnsi: COLORS.ANSI.BG_RED
+const defaultLogger = {
+  error: {
+    level: 'error',
+    icon: icon.error,
+    emoji: emoji.error,
+    ansi: {
+      color: color.ansi.color.red,
+      bg: color.ansi.bg.red
+    },
+    css: {
+      color: color.css.color.red,
+      bg: color.css.bg.red
+    }
   },
-  INFO: {
-    level: 'INFO',
-    icon: ICON.INFO,
-    emoji: EMOJI.INFO,
-    color: COLORS.CSS.BLUE,
-    ansi: COLORS.ANSI.BLUE,
-    bgAnsi: COLORS.ANSI.BG_BLUE
+  info: {
+    level: 'info',
+    icon: icon.info,
+    emoji: emoji.info,
+    ansi: {
+      color: color.ansi.color.blue,
+      bg: color.ansi.bg.blue
+    },
+    css: {
+      color: color.css.color.blue,
+      bg: color.css.bg.blue
+    }
   },
-  HTTP: {
-    level: 'HTTP',
-    icon: ICON.HTTP,
-    emoji: EMOJI.HTTP,
-    color: COLORS.CSS.BLUE,
-    ansi: COLORS.ANSI.BLUE,
-    bgAnsi: COLORS.ANSI.BG_BLUE
+  http: {
+    level: 'http',
+    icon: icon.http,
+    emoji: emoji.http,
+    ansi: {
+      color: color.ansi.color.azure,
+      bg: color.ansi.bg.azure
+    },
+    css: {
+      color: color.css.color.azure,
+      bg: color.css.bg.azure
+    }
   },
-  WARNING: {
-    level: 'WARNING',
-    icon: ICON.WARNING,
-    emoji: EMOJI.WARNING,
-    color: COLORS.CSS.YELLOW,
-    ansi: COLORS.ANSI.YELLOW,
-    bgAnsi: COLORS.ANSI.BG_YELLOW
+  warning: {
+    level: 'warning',
+    icon: icon.warning,
+    emoji: emoji.warning,
+    ansi: {
+      color: color.ansi.color.yellow,
+      bg: color.ansi.bg.yellow
+    },
+    css: {
+      color: color.css.color.yellow,
+      bg: color.css.bg.yellow
+    }
   },
-  SUCCESS: {
-    level: 'SUCCESS',
-    icon: ICON.CHECK,
-    emoji: EMOJI.CHECK,
-    color: COLORS.CSS.GREEN,
-    ansi: COLORS.ANSI.GREEN,
-    bgAnsi: COLORS.ANSI.BG_GREEN
+  success: {
+    level: 'success',
+    icon: icon.check,
+    emoji: emoji.check,
+    ansi: {
+      color: color.ansi.color.green,
+      bg: color.ansi.bg.green
+    },
+    css: {
+      color: color.css.color.green,
+      bg: color.css.bg.green
+    }
   },
-  DEBUG: {
-    level: 'DEBUG',
-    icon: ICON.DEBUG,
-    emoji: EMOJI.DEBUG,
-    color: COLORS.CSS.PURPLE,
-    ansi: COLORS.ANSI.PURPLE,
-    bgAnsi: COLORS.ANSI.BG_PURPLE
+  debug: {
+    level: 'debug',
+    icon: icon.debug,
+    emoji: emoji.debug,
+    ansi: {
+      color: color.ansi.color.purple,
+      bg: color.ansi.bg.purple
+    },
+    css: {
+      color: color.css.color.purple,
+      bg: color.css.bg.purple
+    }
   },
-  LOG: {
-    level: 'LOG',
-    icon: ICON.LOG,
-    emoji: EMOJI.LOG,
-    color: COLORS.CSS.GREY,
-    ansi: COLORS.ANSI.GREY,
-    bgAnsi: COLORS.ANSI.BG_GREY
+  log: {
+    level: 'log',
+    icon: icon.log,
+    emoji: emoji.log,
+    color: color.css.color.grey,
+    ansi: {
+      color: color.ansi.color.grey,
+      bg: color.ansi.bg.grey
+    },
+    css: {
+      color: color.css.color.grey,
+      bg: color.css.bg.grey
+    }
   },
-  SETUP: {
-    level: 'SETUP',
-    icon: ICON.ROCKET,
-    emoji: EMOJI.ROCKET,
-    color: COLORS.CSS.CYAN,
-    ansi: COLORS.ANSI.CYAN,
-    bgAnsi: COLORS.ANSI.BG_CYAN
+  setup: {
+    level: 'setup',
+    icon: icon.rocket,
+    emoji: emoji.rocket,
+    ansi: {
+      color: color.ansi.color.cyan,
+      bg: color.ansi.bg.cyan
+    },
+    css: {
+      color: color.css.color.cyan,
+      bg: color.css.bg.cyan
+    }
   }
 };
 
 export {
-  ICON,
-  EMOJI,
-  COLORS,
-  DEFAULT_LOGGER
+  icon,
+  emoji,
+  color,
+  defaultLogger
 };
