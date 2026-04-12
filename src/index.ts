@@ -1,12 +1,18 @@
-import { COLORS, DEFAULT_LOGGER } from '@src/constant/logger_constant.js';
+import { color, defaultLogger } from '@src/constant/logger_constant.js';
 import { isNode } from '@src/util/validation.js';
 
-import type { LogLevelType, LoggerParameters, LoggerHttpParameters } from '@src/type/logger_type.js';
+import type {
+  LogLevelType,
+  LoggerStyles,
+  LoggerParameters,
+  LoggerHttpParameters,
+  LoggerClassParameters
+} from '@src/type/logger_type.js';
 
 class LogManager {
-  private readonly options: LoggerParameters;
+  private readonly options: LoggerClassParameters;
 
-  constructor (options: Partial<LoggerParameters> = {}) {
+  constructor (options: Partial<LoggerClassParameters> = {}) {
     this.options = {
       showTimestamp: true,
       isDev: true,
@@ -16,7 +22,9 @@ class LogManager {
   }
 
   private formatMessage (level: LogLevelType, message: string, extras?: LoggerParameters) {
-    const config = DEFAULT_LOGGER[level];
+    if (!this.options.isDev) { return []; }
+
+    const config = { ...defaultLogger[level], ...this.options[level], ...extras };
     const showTimestamp = extras?.showTimestamp ?? this.options.showTimestamp;
     const currentPrefix = extras?.prefix ?? this.options.prefix;
     const time = showTimestamp ? `${this.getTimestamp()}` : '';
@@ -24,15 +32,15 @@ class LogManager {
     const fullMessage = `${prefix}${message}`;
 
     if (isNode) {
-      const messageLog = `${config.ansi}${fullMessage}${COLORS.ANSI.RESET}`;
-      return [`${COLORS.ANSI.GREY}${time}${COLORS.ANSI.RESET} ${config.bgAnsi} ${config.icon} ${level} ${COLORS.ANSI.RESET} ${messageLog}`];
+      const messageLog = `${config.ansi.color}${fullMessage}${color.ansi.color.reset}`;
+      return [`${color.ansi.color.grey}${time}${color.ansi.color.reset} ${config.ansi.bg} ${config.icon} ${level.toUpperCase()} ${color.ansi.color.reset} ${messageLog}`];
     }
 
     return [
-      `%c${time}%c${config.emoji} ${config.level}%c ${fullMessage}`,
-      `color: ${COLORS.CSS.GREY};`,
-      `background: ${config.color}; color: white; font-weight: bold; padding: 2px 6px; border-radius: 3px;`,
-      `color: ${config.color}; font-weight: bold;`
+      `%c${time} %c${config.emoji} ${level.toUpperCase()}%c ${fullMessage}`,
+      `color: ${color.css.color.grey};`,
+      `background: ${config.css.bg}; color: ${color.css.color.white}; font-weight: bold; padding: 2px 6px; border-radius: 3px;`,
+      `color: ${config.css.color}; font-weight: bold;`
     ];
   }
 
@@ -52,42 +60,46 @@ class LogManager {
     console.log('');
   }
 
+  debug (message: string, opt?: LoggerParameters) {
+    this.run('debug', message, opt);
+  }
+
   error (message: string, opt?: LoggerParameters) {
-    this.run('ERROR', message, opt);
+    this.run('error', message, opt);
   }
 
   http (options?: LoggerHttpParameters) {
     const url = new URL(options?.url ?? '');
     const path = url.pathname + url.search;
 
-    this.run('HTTP', `${options?.method} ${options?.status} - ${path} (${options?.time}ms)`, options);
+    this.run('http', `${options?.method} ${options?.status} - ${path} (${options?.time}ms)`, options);
   }
 
   httpError (message: string, options?: LoggerHttpParameters) {
     const url = new URL(options?.url ?? '');
     const path = url.pathname + url.search;
 
-    this.run('ERROR', `${options?.method} ${options?.status} - ${path} (${options?.time}ms) - ${message}`, options);
+    this.run('error', `${options?.method} ${options?.status} - ${path} (${options?.time}ms) - ${message}`, options);
   }
 
-  info (message: string, opt?: LoggerParameters) {
-    this.run('INFO', message, opt);
+  info (message: string, opt?: LoggerStyles & LoggerParameters) {
+    this.run('info', message, opt);
   }
 
   log (message: string, opt?: LoggerParameters) {
-    this.run('LOG', message, opt);
+    this.run('log', message, opt);
   }
 
   setup (message: string, opt?: LoggerParameters) {
-    this.run('SETUP', message, opt);
+    this.run('setup', message, opt);
   }
 
   success (message: string, opt?: LoggerParameters) {
-    this.run('SUCCESS', message, opt);
+    this.run('success', message, opt);
   }
 
   warning (message: string, opt?: LoggerParameters) {
-    this.run('WARNING', message, opt);
+    this.run('warning', message, opt);
   }
 }
 
