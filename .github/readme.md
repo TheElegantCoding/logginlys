@@ -299,6 +299,31 @@ loader.stop('Finished loading!', icon.check);
 
 <br />
 
+In case you want to create your own custom log method, you can extend the `LogManager` class and add your custom method:
+
+```ts
+class MyCustomLogger extends LogManager {
+  constructor(options?: Partial<LoggerClassParameters>) {
+    super(options);
+  }
+
+  typescript(message: string, opt?: LoggerParameters) {
+    const tsStyle: LoggerStyles = {
+      ansi: { color: '\u001b[36m' },
+      emoji: '🟦',
+      icon: 'TS'
+    };
+    
+    this.run('typescript' as any, message, { ...tsStyle, ...opt });
+  }
+}
+
+const log = new MyCustomLogger();
+log.typescript('This is a custom TypeScript log message');
+``` 
+
+<br />
+
 <img 
   src="./asset/illustration/divider.svg" 
   alt="divider" 
