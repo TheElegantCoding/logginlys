@@ -12,7 +12,7 @@ const config = eslintConfig({
 }, {
   rules: {
     'no-console': 'off',
-    'max-statements': ['error', 20],
+    'max-statements': ['error', 20]
   }
 });
 
