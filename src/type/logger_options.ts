@@ -3,6 +3,7 @@ import type { LogLevelType, LoggerStyles } from '@src/type/logger_base_type.js';
 type LoggerParameters = {
   prefix?: string;
   isDev?: boolean;
+  showBadge?: boolean;
   blankAbove?: boolean;
   blankBelow?: boolean;
   showTimestamp?: boolean;
