@@ -12,6 +12,7 @@ type LoggerParameters = {
 type LoggerLoaderParameters = {
   color?: string;
   message: string;
+  showTimestamp?: boolean;
   position?: 'left' | 'right';
 };
 
