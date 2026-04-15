@@ -120,8 +120,8 @@ class LogManager {
     this.run('info', message, options);
   }
 
-  loader ({ message, position, color }: LoggerLoaderParameters) {
-    return new LoggerLoader({ message, position, color });
+  loader (options: LoggerLoaderParameters) {
+    return new LoggerLoader({ ...options });
   }
 
   log (message: string, options?: LoggerStyleParameters) {
