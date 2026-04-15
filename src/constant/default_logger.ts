@@ -7,6 +7,7 @@ const defaultLogger = {
     level: 'error',
     icon: icon.error,
     emoji: emoji.error,
+    showBadge: true,
     ansi: {
       color: colorAnsi.red,
       bg: colorAnsi.bgRed
@@ -20,6 +21,7 @@ const defaultLogger = {
     level: 'info',
     icon: icon.info,
     emoji: emoji.info,
+    showBadge: true,
     ansi: {
       color: colorAnsi.blue,
       bg: colorAnsi.bgBlue
@@ -33,6 +35,7 @@ const defaultLogger = {
     level: 'http',
     icon: icon.http,
     emoji: emoji.http,
+    showBadge: true,
     ansi: {
       color: colorAnsi.blueBright,
       bg: colorAnsi.bgBlueBright
@@ -46,6 +49,7 @@ const defaultLogger = {
     level: 'warning',
     icon: icon.warning,
     emoji: emoji.warning,
+    showBadge: true,
     ansi: {
       color: colorAnsi.yellow,
       bg: colorAnsi.bgYellow
@@ -59,6 +63,7 @@ const defaultLogger = {
     level: 'success',
     icon: icon.check,
     emoji: emoji.check,
+    showBadge: true,
     ansi: {
       color: colorAnsi.green,
       bg: colorAnsi.bgGreen
@@ -72,6 +77,7 @@ const defaultLogger = {
     level: 'debug',
     icon: icon.debug,
     emoji: emoji.debug,
+    showBadge: true,
     ansi: {
       color: colorAnsi.purple,
       bg: colorAnsi.bgPurple
@@ -85,6 +91,7 @@ const defaultLogger = {
     level: 'log',
     icon: icon.log,
     emoji: emoji.log,
+    showBadge: true,
     ansi: {
       color: colorAnsi.gray,
       bg: colorAnsi.bgGray
@@ -98,6 +105,7 @@ const defaultLogger = {
     level: 'setup',
     icon: icon.rocket,
     emoji: emoji.rocket,
+    showBadge: true,
     ansi: {
       color: colorAnsi.cyan,
       bg: colorAnsi.bgCyan
