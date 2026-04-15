@@ -168,6 +168,7 @@ You can customize the logger by passing an options object to the `Logger` class 
 - `prefix` (string): A custom prefix to be added before each log message.
 - `isDev` (boolean): A flag to enable or disable logging. If set to `false`, all log methods will be no-ops.
 - `showTimestamp` (boolean): A flag to enable or disable timestamps in log messages.
+- `showBadge` (boolean): A flag to enable or disable badges in log messages.
 - `blankAbove` (boolean): A flag to add a blank line above the log message.
 - `blankBelow` (boolean): A flag to add a blank line below the log message.
 - `icon` (string): A custom icon to be displayed before the log message (only for ansi).
@@ -303,18 +304,15 @@ In case you want to create your own custom log method, you can extend the `LogMa
 
 ```ts
 class MyCustomLogger extends LogManager {
-  constructor(options?: Partial<LoggerClassParameters>) {
-    super(options);
-  }
-
-  typescript(message: string, opt?: LoggerParameters) {
-    const tsStyle: LoggerStyles = {
+  typescript(message: string, options?: LoggerStyleParameters) {
+    const tsStyle: LoggerStyleParameters = {
       ansi: { color: '\u001b[36m' },
+      showBadge: false,
       emoji: '🟦',
       icon: 'TS'
     };
     
-    this.run('typescript' as any, message, { ...tsStyle, ...opt });
+    this.custom(message, { ...options, ...tsStyle });
   }
 }
 
