@@ -4,6 +4,7 @@ import { emoji } from '@src/constant/emoji.js';
 import { icon } from '@src/constant/icon.js';
 import { logBox } from '@src/util/box.js';
 import { LoggerLoader } from '@src/util/loader.js';
+import { getTime } from '@src/util/time.js';
 import { getUrlPathname } from '@src/util/url.js';
 import { isNode } from '@src/util/validation.js';
 
@@ -54,7 +55,7 @@ class LogManager {
 
   private formatMessage (level: LogLevelType, message: string, extras?: LoggerParameters) {
     const config = { ...defaultLogger[level], ...this.options[level], ...extras };
-    const time = extras?.showTimestamp ?? this.options.showTimestamp ? `${this.getTimestamp()}` : '';
+    const time = extras?.showTimestamp ?? this.options.showTimestamp ? getTime() : '';
     const prefix = extras?.prefix ?? this.options.prefix ? `${extras?.prefix ?? this.options.prefix} ` : '';
     const fullMessage = `${prefix}${message}`;
 
@@ -73,10 +74,6 @@ class LogManager {
       fullMessage,
       config
     );
-  }
-
-  private getTimestamp () {
-    return new Date().toISOString().split('T')[1]?.split('.')[0];
   }
 
   private run (type: LogLevelType, message: string, extras?: LoggerParameters) {
@@ -158,5 +155,6 @@ export {
   emoji,
   colorCss,
   colorAnsi,
-  LogManager
+  LogManager,
+  LoggerLoader
 };
