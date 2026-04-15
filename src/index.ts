@@ -17,6 +17,7 @@ class LogManager {
   constructor (options: Partial<LoggerClassParameters> = {}) {
     this.options = {
       showTimestamp: true,
+      showBadge: true,
       isDev: true,
       prefix: '',
       ...options
@@ -27,13 +28,14 @@ class LogManager {
     time: string,
     level: string,
     message: string,
-    config: LoggerStyles
+    config: LoggerStyles & LoggerParameters
   ) {
     const timestamp = `${colorAnsi.gray}${time}${colorAnsi.reset}`;
-    const levelInfo = `${config.ansi?.bg} ${config.icon} ${level.toUpperCase()} ${colorAnsi.reset}`;
+
+    const levelInfo = config.showBadge ? ` ${config.ansi?.bg} ${config.icon} ${level.toUpperCase()} ${colorAnsi.reset} ` : ' ';
     const messageLog = `${config.ansi?.color}${message}${colorAnsi.reset}`;
 
-    return [`${timestamp} ${levelInfo} ${messageLog}`];
+    return [`${timestamp}${levelInfo}${messageLog}`];
   }
 
   private formatCss (
@@ -93,12 +95,16 @@ class LogManager {
     logBox(message, options);
   }
 
-  debug (message: string, opt?: LoggerStyleParameters) {
-    this.run('debug', message, opt);
+  custom (message: string, options?: LoggerStyleParameters) {
+    this.run('debug', message, options);
   }
 
-  error (message: string, opt?: LoggerStyleParameters) {
-    this.run('error', message, opt);
+  debug (message: string, options?: LoggerStyleParameters) {
+    this.run('debug', message, options);
+  }
+
+  error (message: string, options?: LoggerStyleParameters) {
+    this.run('error', message, options);
   }
 
   http (options?: LoggerHttpParameters) {
@@ -113,32 +119,38 @@ class LogManager {
     this.run('error', `${options?.method} ${options?.status} - ${path} (${options?.time}ms) - ${message}`, options);
   }
 
-  info (message: string, opt?: LoggerStyleParameters) {
-    this.run('info', message, opt);
+  info (message: string, options?: LoggerStyleParameters) {
+    this.run('info', message, options);
   }
 
   loader ({ message, position, color }: LoggerLoaderParameters) {
     return new LoggerLoader({ message, position, color });
   }
 
-  log (message: string, opt?: LoggerStyleParameters) {
-    this.run('log', message, opt);
+  log (message: string, options?: LoggerStyleParameters) {
+    this.run('log', message, options);
   }
 
-  setup (message: string, opt?: LoggerStyleParameters) {
-    this.run('setup', message, opt);
+  setup (message: string, options?: LoggerStyleParameters) {
+    this.run('setup', message, options);
   }
 
-  success (message: string, opt?: LoggerStyleParameters) {
-    this.run('success', message, opt);
+  success (message: string, options?: LoggerStyleParameters) {
+    this.run('success', message, options);
   }
 
-  warning (message: string, opt?: LoggerStyleParameters) {
-    this.run('warning', message, opt);
+  warning (message: string, options?: LoggerStyleParameters) {
+    this.run('warning', message, options);
   }
 }
 
 const log = new LogManager();
+
+export type {
+  LoggerParameters,
+  LoggerClassParameters,
+  LoggerStyleParameters
+};
 
 export {
   log,
