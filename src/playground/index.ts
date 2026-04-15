@@ -107,7 +107,8 @@ logger.blank();
 const loader = logger.loader({
   message: 'Loading...',
   position: 'left',
-  color: colorAnsi.cyan
+  color: colorAnsi.cyan,
+  showTimestamp: true
 });
 
 loader.start();
