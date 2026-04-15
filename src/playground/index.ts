@@ -73,7 +73,7 @@ log.info('This is an info message with custom styles', {
     bg: '\u001b[46m'
   }
 });
-log.success('This is a success message', { blankAbove: true });
+log.success('This is a success message', { blankAbove: true, showBadge: false, showTimestamp: false });
 
 logger.blank();
 
