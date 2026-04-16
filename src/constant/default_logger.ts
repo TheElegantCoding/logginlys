@@ -1,12 +1,12 @@
 import { colorCss, colorAnsi } from '@src/constant/color.js';
-import { emoji } from '@src/constant/emoji.js';
-import { icon } from '@src/constant/icon.js';
+import { loggerEmoji } from '@src/constant/logger_emoji.js';
+import { loggerIcon } from '@src/constant/logger_icon.js';
 
 const defaultLogger = {
   error: {
     level: 'error',
-    icon: icon.error,
-    emoji: emoji.error,
+    icon: loggerIcon.error,
+    emoji: loggerEmoji.error,
     showBadge: true,
     ansi: {
       color: colorAnsi.red,
@@ -19,8 +19,8 @@ const defaultLogger = {
   },
   info: {
     level: 'info',
-    icon: icon.info,
-    emoji: emoji.info,
+    icon: loggerIcon.info,
+    emoji: loggerEmoji.info,
     showBadge: true,
     ansi: {
       color: colorAnsi.blue,
@@ -33,8 +33,8 @@ const defaultLogger = {
   },
   http: {
     level: 'http',
-    icon: icon.http,
-    emoji: emoji.http,
+    icon: loggerIcon.http,
+    emoji: loggerEmoji.http,
     showBadge: true,
     ansi: {
       color: colorAnsi.blueBright,
@@ -47,8 +47,8 @@ const defaultLogger = {
   },
   warning: {
     level: 'warning',
-    icon: icon.warning,
-    emoji: emoji.warning,
+    icon: loggerIcon.warning,
+    emoji: loggerEmoji.warning,
     showBadge: true,
     ansi: {
       color: colorAnsi.yellow,
@@ -61,8 +61,8 @@ const defaultLogger = {
   },
   success: {
     level: 'success',
-    icon: icon.check,
-    emoji: emoji.check,
+    icon: loggerIcon.check,
+    emoji: loggerEmoji.check,
     showBadge: true,
     ansi: {
       color: colorAnsi.green,
@@ -75,8 +75,8 @@ const defaultLogger = {
   },
   debug: {
     level: 'debug',
-    icon: icon.debug,
-    emoji: emoji.debug,
+    icon: loggerIcon.debug,
+    emoji: loggerEmoji.debug,
     showBadge: true,
     ansi: {
       color: colorAnsi.purple,
@@ -89,8 +89,8 @@ const defaultLogger = {
   },
   log: {
     level: 'log',
-    icon: icon.log,
-    emoji: emoji.log,
+    icon: loggerIcon.log,
+    emoji: loggerEmoji.log,
     showBadge: true,
     ansi: {
       color: colorAnsi.gray,
@@ -103,8 +103,8 @@ const defaultLogger = {
   },
   setup: {
     level: 'setup',
-    icon: icon.rocket,
-    emoji: emoji.rocket,
+    icon: loggerIcon.rocket,
+    emoji: loggerEmoji.rocket,
     showBadge: true,
     ansi: {
       color: colorAnsi.cyan,
