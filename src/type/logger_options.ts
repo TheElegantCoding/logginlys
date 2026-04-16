@@ -1,3 +1,4 @@
+import type { loaderStyle } from '@src/constant/loader_style.js';
 import type { LogLevelType, LoggerStyles } from '@src/type/logger_base_type.js';
 
 type LoggerParameters = {
@@ -14,6 +15,7 @@ type LoggerLoaderParameters = {
   message: string;
   showTimestamp?: boolean;
   position?: 'left' | 'right';
+  type?: keyof typeof loaderStyle;
 };
 
 type LoggerClassParameters = LoggerParameters & Partial<Record<LogLevelType, LoggerStyles>>;
