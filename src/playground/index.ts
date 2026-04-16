@@ -3,7 +3,9 @@ import {
   colorAnsi,
   LogManager
 } from '@src/index.js';
-import { logUrl } from '@src/util/url.js';
+import { loggerColumn } from '@src/module/logger_column.js';
+import { loggerStyle } from '@src/module/logger_style.js';
+import { loggerUrl } from '@src/module/logger_url.js';
 
 const log = new LogManager();
 
@@ -30,7 +32,7 @@ log.httpError('This is a HTTP error message', {
   time: 300
 });
 
-log.log(`this is a url: ${logUrl('https://example.com/api/data?query=123')}`);
+log.log(`this is a url: ${loggerUrl('https://example.com/api/data?query=123')}`);
 
 log.blank();
 log.blank();
@@ -103,12 +105,39 @@ log.box('Box message', {
 
 logger.blank();
 
+// Column usage example
+const columnMessage = [
+  'Column line 1',
+  'Column line 2',
+  'Column line 3',
+  'Column line 4',
+  'Column line 5',
+  'Column line 6',
+  'Column line 7'
+];
+
+log.info(`Column example:\n\n${loggerColumn(columnMessage, { width: 80, padding: 4 })}`);
+
+logger.blank();
+logger.blank();
+
+// style usage example
+log.info(loggerStyle.ansi('Styled message', {
+  bold: true,
+  color: colorAnsi.blue,
+  bg: colorAnsi.bgYellow
+}));
+
+logger.blank();
+logger.blank();
+
 // loader
 const loader = logger.loader({
   message: 'Loading...',
   position: 'left',
   color: colorAnsi.cyan,
-  showTimestamp: true
+  showTimestamp: true,
+  type: 'line'
 });
 
 loader.start();
