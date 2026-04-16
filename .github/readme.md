@@ -288,7 +288,7 @@ To use loader logs, you can use the `log.loader` method:
 const loader = logger.loader({
   message: 'Loading...',
   position: 'left',
-  color: colorAnsi.cyan
+  color: colorAnsi.cyan,
 });
 
 loader.start();
@@ -297,6 +297,54 @@ loader.stop('Finished loading!', icon.check);
 
 <img src="./asset/image/loader.png" width="100%" align="center" />
 <img src="./asset/image/loader_finish.png" width="100%" align="center" />
+
+You have the option to customize the loader message, position and color. You can also use different icons to indicate the status of the loader.
+
+- `message` (string): The message to be displayed next to the loader.
+- `position` (string): The position of the loader, can be 'left', 'right' or 'center'.
+- `color` (string): The color of the loader, can be any valid ANSI color code for terminal or any valid CSS color for browser.
+- `showTimestamp` (boolean): A flag to enable or disable timestamps in loader messages.
+- `type` (string): The type of the loader animation, can be 'line', 'dots', 'bounce' or 'circle' or 'grow'.
+
+<br />
+
+Column logs are also available using the `loggerColumn` method:
+
+```ts
+logger.info(`Column example:\n\n${loggerColumn(columnMessage, { width: 80, padding: 4 })}`);
+```
+
+Resulting in this:
+
+<img src="./asset/image/column.png" width="100%" align="center" />
+<img src="./asset/image/column_browser.png" width="100%" align="center" />
+
+<br />
+
+Custom style text can be created using the `loggerStyle` method:
+
+```ts
+
+// Ansi example
+logger.info(loggerStyle.ansi('Styled message', {
+  bold: true,
+  color: colorAnsi.blue,
+  bg: colorAnsi.bgYellow
+}));
+
+// CSS example
+logger.info(loggerStyle.css('Styled message', {
+  color: colorCss.blue,
+  'background-color': colorCss.bgYellow, 
+  padding: '5px 10px',
+  'border-radius': '5px'
+}));
+```
+
+Resulting in this:
+
+<img src="./asset/image/style.png" width="100%" align="center" />
+<img src="./asset/image/style_browser.png" width="100%" align="center" />
 
 <br />
 
