@@ -11,7 +11,7 @@ class LoggerLoader {
   private readonly color: string = colorAnsi.blueBright;
   private frameIndex = 0;
   private readonly message: string = 'Loading...';
-  private readonly position: 'left' | 'right' = 'left';
+  private readonly position: 'left' | 'right' = 'right';
   private readonly showTimestamp: boolean = false;
   private timer: null | NodeJS.Timeout = null;
   private readonly type: keyof typeof loaderStyle = 'dots';
@@ -43,9 +43,9 @@ class LoggerLoader {
       const message = loggerStyle.ansi(this.message, { color: this.color });
 
       if (this.position === 'left') {
-        process.stdout.write(`\r${time}${message} ${frame}`);
+        process.stdout.write(`\r${time}${frame} ${message} `);
       } else {
-        process.stdout.write(`\r${time}${frame} ${message}`);
+        process.stdout.write(`\r${time} ${message} ${frame}`);
       }
 
       this.frameIndex = (this.frameIndex + 1) % loaderStyle[this.type].length;
