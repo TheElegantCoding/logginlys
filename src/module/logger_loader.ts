@@ -45,7 +45,7 @@ class LoggerLoader {
       if (this.position === 'left') {
         process.stdout.write(`\r${time}${frame} ${message} `);
       } else {
-        process.stdout.write(`\r${time} ${message} ${frame}`);
+        process.stdout.write(`\r${time}${message} ${frame}`);
       }
 
       this.frameIndex = (this.frameIndex + 1) % loaderStyle[this.type].length;
