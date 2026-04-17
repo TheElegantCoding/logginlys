@@ -1,37 +1,37 @@
-<img src="./asset/illustration/wave_header.svg" width="100%" align="center"/>
+<img src="./.github/asset/illustration/wave_header.svg" width="100%" align="center"/>
 
 <h1 id="top" align="center">
-  <img src="./asset/icon/terminal.svg" alt="divider" width="32px" align="center" />
+  <img src="./.github/asset/icon/terminal.svg" alt="divider" width="32px" align="center" />
   Logginlys
 </h1>
 
 <br />
 
-<img src="./asset/illustration/divider.svg" alt="divider" width="100%" align="center" />
+<img src="./.github/asset/illustration/divider.svg" alt="divider" width="100%" align="center" />
 
 <pre align="center">
   <a href="#installation">📦 SETUP</a> • <a href="#configuration">⚙️ CONFIGURATION</a>
 </pre>
 
-<img src="./asset/illustration/divider.svg" alt="divider" width="100%" align="center" />
+<img src="./.github/asset/illustration/divider.svg" alt="divider" width="100%" align="center" />
 
-<img src="./asset/illustration/cover.svg" width="100%" align="center" />
+<img src="./.github/asset/illustration/cover.svg" width="100%" align="center" />
 
 <br />
 
 <div align="center">
-  <img src="./asset/illustration/bun_badget.svg" height="34px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/illustration/github_badget.svg" height="34px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/illustration/typescript_badget.svg" height="34px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/illustration/node_badget.svg" height="34px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/illustration/npm_badget.svg" height="34px" />&nbsp;&nbsp;&nbsp;
-  <img src="./asset/illustration/git_badget.svg" height="34px" />
+  <img src="./.github/asset/illustration/bun_badget.svg" height="34px" />&nbsp;&nbsp;&nbsp;
+  <img src="./.github/asset/illustration/github_badget.svg" height="34px" />&nbsp;&nbsp;&nbsp;
+  <img src="./.github/asset/illustration/typescript_badget.svg" height="34px" />&nbsp;&nbsp;&nbsp;
+  <img src="./.github/asset/illustration/node_badget.svg" height="34px" />&nbsp;&nbsp;&nbsp;
+  <img src="./.github/asset/illustration/npm_badget.svg" height="34px" />&nbsp;&nbsp;&nbsp;
+  <img src="./.github/asset/illustration/git_badget.svg" height="34px" />
 </div>
 
-<img src="./asset/illustration/divider.svg" alt="divider" width="100%" align="center" />
+<img src="./.github/asset/illustration/divider.svg" alt="divider" width="100%" align="center" />
 
 <h2 id="about">
-  <img src="./asset/icon/information.svg" width="24px" align="center"/>
+  <img src="./.github/asset/icon/information.svg" width="24px" align="center"/>
   About
 </h2>
 
@@ -47,57 +47,57 @@ Forget about messy `console.log` statements. Logginlys automatically detects you
 
 <br />
 
-<img src="./asset/illustration/divider.svg" alt="divider" width="100%" align="center" />
+<img src="./.github/asset/illustration/divider.svg" alt="divider" width="100%" align="center" />
 
 <h2 id="table-of-content">
-  <img src="./asset/icon/book.svg" width="20px" align="center"/>
+  <img src="./.github/asset/icon/book.svg" width="20px" align="center"/>
   Table of content
 </h2>
 
-- [<img src="./asset/icon/information.svg" width="16px" align="center" /> About](#about)
-- [<img src="./asset/icon/thunder.svg" width="16px" align="center" /> Requirements](#requirements)
-- [<img src="./asset/icon/package.svg" width="16px" align="center" /> Installation](#installation)
-- [<img src="./asset/icon/rocket.svg" width="16px" align="center" /> Usage](#usage)
-- [<img src="./asset/icon/gear.svg" width="16px" align="center" /> Configuration](#configuration)
+- [<img src="./.github/asset/icon/information.svg" width="16px" align="center" /> About](#about)
+- [<img src="./.github/asset/icon/thunder.svg" width="16px" align="center" /> Requirements](#requirements)
+- [<img src="./.github/asset/icon/package.svg" width="16px" align="center" /> Installation](#installation)
+- [<img src="./.github/asset/icon/rocket.svg" width="16px" align="center" /> Usage](#usage)
+- [<img src="./.github/asset/icon/gear.svg" width="16px" align="center" /> Configuration](#configuration)
 
-<img src="./asset/illustration/divider.svg" alt="divider" width="100%" align="center" />
+<img src="./.github/asset/illustration/divider.svg" alt="divider" width="100%" align="center" />
 
 <h2 id="requirements">
-  <img src="./asset/icon/thunder.svg" width="20px" align="center"/>
+  <img src="./.github/asset/icon/thunder.svg" width="20px" align="center"/>
   Requirements
 </h2>
 
-- <img src="./asset/icon/node.svg" width="20px" align="center" /> node >= **22.17.0**
-- <img src="./asset/icon/bun.svg" width="20px" align="center" /> bun >= **1.1.0**
+- <img src="./.github/asset/icon/node.svg" width="20px" align="center" /> node >= **22.17.0**
+- <img src="./.github/asset/icon/bun.svg" width="20px" align="center" /> bun >= **1.1.0**
 
 <br />
 
-<img src="./asset/illustration/divider.svg" alt="divider" width="100%" align="center" />
+<img src="./.github/asset/illustration/divider.svg" alt="divider" width="100%" align="center" />
 
 <h2 id="installation">
-  <img src="./asset/icon/package.svg" width="24px" align="center" />
+  <img src="./.github/asset/icon/package.svg" width="24px" align="center" />
   Installation
 </h2>
 
-<h3><img src="./asset/icon/bun.svg" width="24px" align="center" /> Bun</h3>
+<h3><img src="./.github/asset/icon/bun.svg" width="24px" align="center" /> Bun</h3>
 
 ```bash
 bun i -D logginlys
 ```
 
-<h3><img src="./asset/icon/npm.svg" width="24px" align="center" /> Npm</h3>
+<h3><img src="./.github/asset/icon/npm.svg" width="24px" align="center" /> Npm</h3>
 
 ```bash
 npm i -D logginlys
 ```
 
-<h3><img src="./asset/icon/pnpm.svg" width="24px" align="center" /> Pnpm</h3>
+<h3><img src="./.github/asset/icon/pnpm.svg" width="24px" align="center" /> Pnpm</h3>
 
 ```bash
 pnpm i -D logginlys
 ```
 
-<h3><img src="./asset/icon/yarn.svg" width="24px" align="center" /> Yarn</h3>
+<h3><img src="./.github/asset/icon/yarn.svg" width="24px" align="center" /> Yarn</h3>
 
 ```bash
 yarn i -D logginlys
@@ -106,14 +106,14 @@ yarn i -D logginlys
 <br />
 
 <img 
-  src="./asset/illustration/divider.svg" 
+  src="./.github/asset/illustration/divider.svg" 
   alt="divider" 
   width="100%" 
   align="center"
 />
 
 <h2 id="usage">
-  <img src="./asset/icon/rocket.svg" width="20px" align="center" />
+  <img src="./.github/asset/icon/rocket.svg" width="20px" align="center" />
   Usage
 </h2>
 
@@ -146,20 +146,20 @@ log.httpError('This is a HTTP error message', {
 
 The result will be this:
 
-<img src="./asset/image/preview.png" width="100%" align="center" />
-<img src="./asset/image/preview_browser.png" width="100%" align="center" />
+<img src="./.github/asset/image/preview.png" width="100%" align="center" />
+<img src="./.github/asset/image/preview_browser.png" width="100%" align="center" />
 
 <br />
 
 <img 
-  src="./asset/illustration/divider.svg" 
+  src="./.github/asset/illustration/divider.svg" 
   alt="divider" 
   width="100%" 
   align="center"
 />
 
 <h2 id="configuration">
-  <img src="./asset/icon/gear.svg" width="24px" align="center" />
+  <img src="./.github/asset/icon/gear.svg" width="24px" align="center" />
   Configuration
 </h2>
 
@@ -215,8 +215,8 @@ logger.setup('This is a setup message');
 
 Resulting in this:
 
-<img src="./asset/image/preview_global.png" width="100%" align="center" />
-<img src="./asset/image/preview_global_browser.png" width="100%" align="center" />
+<img src="./.github/asset/image/preview_global.png" width="100%" align="center" />
+<img src="./.github/asset/image/preview_global_browser.png" width="100%" align="center" />
 
 <br />
 
@@ -242,8 +242,8 @@ log.success('This is a success message', { blankAbove: true });
 
 Resulting in this:
 
-<img src="./asset/image/preview_custom_log.png" width="100%" align="center" />
-<img src="./asset/image/preview_custom_log_browser.png" width="100%" align="center" />
+<img src="./.github/asset/image/preview_custom_log.png" width="100%" align="center" />
+<img src="./.github/asset/image/preview_custom_log_browser.png" width="100%" align="center" />
 
 <br />
 
@@ -277,8 +277,8 @@ log.box('Box message', {
 
 Resulting in this:
 
-<img src="./asset/image/box.png" width="100%" align="center" />
-<img src="./asset/image/box_browser.png" width="100%" align="center" />
+<img src="./.github/asset/image/box.png" width="100%" align="center" />
+<img src="./.github/asset/image/box_browser.png" width="100%" align="center" />
 
 <br />
 
@@ -295,8 +295,8 @@ loader.start();
 loader.stop('Finished loading!', icon.check);
 ```
 
-<img src="./asset/image/loader.png" width="100%" align="center" />
-<img src="./asset/image/loader_finish.png" width="100%" align="center" />
+<img src="./.github/asset/image/loader.png" width="100%" align="center" />
+<img src="./.github/asset/image/loader_finish.png" width="100%" align="center" />
 
 You have the option to customize the loader message, position and color. You can also use different icons to indicate the status of the loader.
 
@@ -316,8 +316,8 @@ logger.info(`Column example:\n\n${loggerColumn(columnMessage, { width: 80, paddi
 
 Resulting in this:
 
-<img src="./asset/image/column.png" width="100%" align="center" />
-<img src="./asset/image/column_browser.png" width="100%" align="center" />
+<img src="./.github/asset/image/column.png" width="100%" align="center" />
+<img src="./.github/asset/image/column_browser.png" width="100%" align="center" />
 
 <br />
 
@@ -343,8 +343,8 @@ logger.info(loggerStyle.css('Styled message', {
 
 Resulting in this:
 
-<img src="./asset/image/style.png" width="100%" align="center" />
-<img src="./asset/image/style_browser.png" width="100%" align="center" />
+<img src="./.github/asset/image/style.png" width="100%" align="center" />
+<img src="./.github/asset/image/style_browser.png" width="100%" align="center" />
 
 <br />
 
@@ -371,7 +371,7 @@ log.typescript('This is a custom TypeScript log message');
 <br />
 
 <img 
-  src="./asset/illustration/divider.svg" 
+  src="./.github/asset/illustration/divider.svg" 
   alt="divider" 
   width="100%" 
   align="center"
@@ -382,7 +382,7 @@ log.typescript('This is a custom TypeScript log message');
 </pre>
 
 <img 
-  src="./asset/illustration/divider.svg" 
+  src="./.github/asset/illustration/divider.svg" 
   alt="divider" 
   width="100%" 
   align="center"
@@ -393,7 +393,7 @@ log.typescript('This is a custom TypeScript log message');
   developed by LuisdaByte and
 </pre>
 <div align="center">
-  <img src="./asset/illustration/astralys_logo.svg" width="120px" align="center" />
+  <img src="./.github/asset/illustration/astralys_logo.svg" width="120px" align="center" />
 </div>
 
-<img src="./asset/illustration/wave_footer.svg" width="100%" align="center" />
+<img src="./.github/asset/illustration/wave_footer.svg" width="100%" align="center" />
