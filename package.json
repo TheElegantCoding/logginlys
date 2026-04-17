@@ -40,13 +40,17 @@
   },
   "scripts": {
     "preinstall": "npx only-allow bun",
+    "postinstall": "bunx gitlys init",
+    "release": "bunx gitlys release",
+    "publish": "npm publish --access public",
     "dev": "bun --watch src/playground/index.ts",
     "lint": "eslint . --fix ",
     "build": "tsup"
   },
   "devDependencies": {
-    "@types/node": "^25.5.2",
-    "eslint-config-universal-code": "^1.0.10",
+    "@types/node": "^25.6.0",
+    "eslint-config-universal-code": "^1.0.13",
+    "gitlys": "^1.0.12",
     "tsup": "^8.5.1",
     "typescript": "^6.0.2"
   }
