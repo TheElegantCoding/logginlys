@@ -9,12 +9,12 @@ import { isNode } from '@src/util/validation.js';
 
 import type { LogLevelType } from '@src/type/logger_base_type.js';
 import type { LoggerBoxParameters, LoggerHttpParameters, LoggerStyleParameters } from '@src/type/logger_method_type.js';
-import type { LoggerParameters, LoggerClassParameters, LoggerLoaderParameters } from '@src/type/logger_options.js';
+import type { LoggerParameters, LoggerLoaderParameters } from '@src/type/logger_options.js';
 
 class LogManager {
-  private readonly options: LoggerClassParameters;
+  private readonly options: LoggerParameters;
 
-  constructor (options: Partial<LoggerClassParameters> = {}) {
+  constructor (options: Partial<LoggerParameters> = {}) {
     this.options = {
       showTimestamp: true,
       showBadge: true,
@@ -24,20 +24,11 @@ class LogManager {
     };
   }
 
-  private formatAnsi (
-    time: string,
-    level: string,
-    message: string,
-    config: LoggerStyleParameters
-  ) {
+  private formatAnsi (time: string, message: string, config: LoggerStyleParameters) {
     const timestamp = loggerStyle.ansi(time, { color: colorAnsi.gray });
-    const badgeLevel = loggerStyle.ansi(` ${config.icon} ${level.toUpperCase()} `, {
-      color: config.ansi?.color,
-      bg: config.ansi?.bg,
-      bold: true
-    });
-    const levelInfo = config.showBadge ? ` ${badgeLevel} ` : ' ';
-    const messageLog = loggerStyle.ansi(message, { color: config.ansi?.color });
+    const badge = config.ansi?.badge ? ` ${config.ansi.badge} ` : ' ';
+    const levelInfo = config.showBadge ? badge : ' ';
+    const messageLog = loggerStyle.ansi(message, { bold: true });
 
     return [`${timestamp}${levelInfo}${messageLog}`];
   }
@@ -62,19 +53,14 @@ class LogManager {
   }
 
   private formatMessage (level: LogLevelType, message: string, extras?: LoggerParameters) {
-    const config = { ...defaultLogger[level], ...this.options[level], ...extras };
+    const config = { ...defaultLogger[level], ...extras } as LoggerStyleParameters;
     const showTime = extras?.showTimestamp ?? this.options.showTimestamp;
     const time = showTime ? getTime() : '';
     const currentPrefix = extras?.prefix ?? this.options.prefix;
     const fullMessage = currentPrefix ? `${currentPrefix} ${message}` : message;
 
     if (isNode) {
-      return this.formatAnsi(
-        time,
-        level,
-        fullMessage,
-        config
-      );
+      return this.formatAnsi(time, fullMessage, config);
     }
 
     return this.formatCss(
@@ -107,15 +93,11 @@ class LogManager {
     loggerBox(message, options);
   }
 
-  custom (message: string, options?: LoggerStyleParameters) {
+  debug (message: string, options?: LoggerParameters) {
     this.run('debug', message, options);
   }
 
-  debug (message: string, options?: LoggerStyleParameters) {
-    this.run('debug', message, options);
-  }
-
-  error (message: string, options?: LoggerStyleParameters) {
+  error (message: string, options?: LoggerParameters) {
     this.run('error', message, options);
   }
 
@@ -131,7 +113,7 @@ class LogManager {
     this.run('error', `${options?.method} ${options?.status} - ${path} (${options?.time}ms) - ${message}`, options);
   }
 
-  info (message: string, options?: LoggerStyleParameters) {
+  info (message: string, options?: LoggerParameters) {
     this.run('info', message, options);
   }
 
@@ -139,19 +121,19 @@ class LogManager {
     return new LoggerLoader({ ...options });
   }
 
-  log (message: string, options?: LoggerStyleParameters) {
+  log (message: string, options?: LoggerParameters) {
     this.run('log', message, options);
   }
 
-  setup (message: string, options?: LoggerStyleParameters) {
+  setup (message: string, options?: LoggerParameters) {
     this.run('setup', message, options);
   }
 
-  success (message: string, options?: LoggerStyleParameters) {
+  success (message: string, options?: LoggerParameters) {
     this.run('success', message, options);
   }
 
-  warning (message: string, options?: LoggerStyleParameters) {
+  warning (message: string, options?: LoggerParameters) {
     this.run('warning', message, options);
   }
 }
