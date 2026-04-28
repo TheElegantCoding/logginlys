@@ -41,7 +41,7 @@
   "scripts": {
     "preinstall": "npx only-allow bun",
     "postinstall": "bunx gitlys init",
-    "release": "bunx gitlys release",
+    "release": "bun run build && bunx gitlys release",
     "dev": "bun --watch src/playground/index.ts",
     "lint": "eslint . --fix ",
     "build": "tsup"
