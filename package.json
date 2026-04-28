@@ -2,7 +2,7 @@
   "name": "logginlys",
   "description": "📦️ A lightweight, high-performance TypeScript logger with automatic environment detection for consistent ANSI and CSS styling in Node.js and Browser.",
   "author": "Luis Monsalve",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "homepage": "https://github.com/TheElegantCoding/logginlys#readme",
   "repository": {
     "type": "git",
@@ -33,7 +33,9 @@
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["./dist"],
+  "files": [
+    "./dist"
+  ],
   "engines": {
     "node": ">=22.17.0",
     "bun": ">=1.1.0"

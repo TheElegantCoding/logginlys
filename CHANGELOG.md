@@ -16,6 +16,25 @@ The list of changes have the description - commit - author.
 
 ## Released
 
+## 🚀 Version [4.0.0] - 2026-04-28
+
+- **refactor:** remove unused ANSI and CSS customization options from Logger configuration [`a209de2`](https://github.com/TheElegantCoding/loglys/commit/a209de2) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **refactor:** add defaultLogger export to index for improved accessibility [`8dd650a`](https://github.com/TheElegantCoding/loglys/commit/8dd650a) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **refactor:** enhance defaultLogger to include styled badges for log levels [`059418d`](https://github.com/TheElegantCoding/loglys/commit/059418d) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **refactor:** add binary and aesthetic loader styles to enhance visual options [`9678168`](https://github.com/TheElegantCoding/loglys/commit/9678168) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **refactor:** enhance LoggerLoader to accept finalMessage parameter and simplify stop method [`2847420`](https://github.com/TheElegantCoding/loglys/commit/2847420) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **refactor:** update Logger class to use LoggerParameters and simplify formatAnsi method [`7f003f8`](https://github.com/TheElegantCoding/loglys/commit/7f003f8) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **refactor:** streamline logger configuration and enhance loader functionality [`4f61fe5`](https://github.com/TheElegantCoding/loglys/commit/4f61fe5) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **fix:** add missing badge property to ansi in LoggerStyles type [`92175d2`](https://github.com/TheElegantCoding/loglys/commit/92175d2) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **refactor:** remove unused imports and LoggerClassParameters type from logger_options.ts [`19809ba`](https://github.com/TheElegantCoding/loglys/commit/19809ba) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **chore:** update eslint-config-universal-code to version 1.0.19 and gitlys to version 2.0.1 [`354f4a4`](https://github.com/TheElegantCoding/loglys/commit/354f4a4) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **fix:** remove unnecessary align attributes and correct badge names in README [`31201a2`](https://github.com/TheElegantCoding/loglys/commit/31201a2) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **chore:** update gitlys to version 1.1.5 and remove npm publish script [`26054b4`](https://github.com/TheElegantCoding/loglys/commit/26054b4) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **asset:** update SVG icons: Modify rocket and terminal icons, add satellite icon [`dd396d8`](https://github.com/TheElegantCoding/loglys/commit/dd396d8) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **asset:** add social template image for enhanced branding [`296734e`](https://github.com/TheElegantCoding/loglys/commit/296734e) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **asset:** add npm and TypeScript badges; remove unused social template image [`21cef46`](https://github.com/TheElegantCoding/loglys/commit/21cef46) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **chore:** remove outdated copilot instructions file [`95d4530`](https://github.com/TheElegantCoding/loglys/commit/95d4530) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+
 ## 🚀 Version [3.0.2] - 2026-04-18
 
 - **fix:** update gitlys dependency version to 1.1.4 [`0423e71`](https://github.com/TheElegantCoding/loglys/commit/0423e71) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
