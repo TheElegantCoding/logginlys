@@ -1,7 +1,8 @@
 import {
   colorCss,
   colorAnsi,
-  LogManager
+  LogManager,
+  loggerIcon
 } from '@src/index.js';
 import { loggerColumn } from '@src/module/logger_column.js';
 import { loggerStyle } from '@src/module/logger_style.js';
@@ -43,19 +44,7 @@ const logger = new LogManager({
   isDev: true,
   showTimestamp: true,
   blankAbove: false,
-  blankBelow: false,
-  info: {
-    icon: '\uebc6',
-    emoji: 'ℹ️'
-  },
-  setup: {
-    icon: '\uebd7',
-    emoji: '⚙️',
-    ansi: {
-      color: '\u001b[0;36m',
-      bg: '\u001b[46m'
-    }
-  }
+  blankBelow: false
 });
 
 logger.info('This is an info message');
@@ -65,15 +54,9 @@ logger.blank();
 logger.blank();
 
 // Custom log example
-log.info('This is an info message with custom styles', {
+log.info('This is an info message with prefix', {
   prefix: '[Custom Prefix]',
-  showTimestamp: false,
-  icon: '\uebc6',
-  emoji: 'ℹ️',
-  ansi: {
-    color: '\u001b[0;36m',
-    bg: '\u001b[46m'
-  }
+  showTimestamp: false
 });
 log.success('This is a success message', { blankAbove: true, showBadge: false, showTimestamp: false });
 
@@ -128,16 +111,18 @@ log.info(loggerStyle.ansi('Styled message', {
   bg: colorAnsi.bgYellow
 }));
 
+const badge = `${colorAnsi.bgBlue} ${loggerIcon.info} INFO ${colorAnsi.reset}`;
+
+const loaderInstance = logger.loader({
+  message: `${badge} Loading...`,
+  finalMessage: `${badge} Loading... ${loggerStyle.ansi(loggerIcon.check, { color: colorAnsi.green })}`,
+  showTimestamp: true,
+  color: colorAnsi.green,
+  type: 'aesthetic'
+});
+
 logger.blank();
 logger.blank();
 
 // loader
-const loader = logger.loader({
-  message: 'Loading...',
-  position: 'right',
-  color: colorAnsi.cyan,
-  showTimestamp: true,
-  type: 'line'
-});
-
-loader.start();
+loaderInstance.start();
