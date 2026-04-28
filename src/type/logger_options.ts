@@ -1,5 +1,4 @@
 import type { loaderStyle } from '@src/constant/loader_style.js';
-import type { LogLevelType, LoggerStyles } from '@src/type/logger_base_type.js';
 
 type LoggerParameters = {
   prefix?: string;
@@ -13,11 +12,11 @@ type LoggerParameters = {
 type LoggerLoaderParameters = {
   color?: string;
   message: string;
+  gradient?: boolean;
+  finalMessage?: string;
   showTimestamp?: boolean;
   position?: 'left' | 'right';
   type?: keyof typeof loaderStyle;
 };
 
-type LoggerClassParameters = LoggerParameters & Partial<Record<LogLevelType, LoggerStyles>>;
-
-export type { LoggerParameters, LoggerClassParameters, LoggerLoaderParameters };
+export type { LoggerParameters, LoggerLoaderParameters };
