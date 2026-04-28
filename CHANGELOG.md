@@ -16,6 +16,11 @@ The list of changes have the description - commit - author.
 
 ## Released
 
+## 🚀 Version [4.0.1] - 2026-04-28
+
+- **refactor:** update release script to include build step [`fa2f9ee`](https://github.com/TheElegantCoding/loglys/commit/fa2f9ee) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **refactor:** standardize formatting of files array in package.json [`b073485`](https://github.com/TheElegantCoding/loglys/commit/b073485) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+
 ## 🚀 Version [4.0.0] - 2026-04-28
 
 - **refactor:** remove unused ANSI and CSS customization options from Logger configuration [`a209de2`](https://github.com/TheElegantCoding/loglys/commit/a209de2) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
