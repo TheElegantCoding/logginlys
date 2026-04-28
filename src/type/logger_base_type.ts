@@ -24,6 +24,7 @@ type LoggerStyles = {
   };
   ansi?: {
     bg?: string;
+    badge?: string;
     color?: string;
   };
 };
