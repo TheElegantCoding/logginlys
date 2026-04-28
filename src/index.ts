@@ -1,4 +1,5 @@
 import { colorCss, colorAnsi } from '@src/constant/color.js';
+import { defaultLogger } from '@src/constant/default_logger.js';
 import { loggerEmoji } from '@src/constant/logger_emoji.js';
 import { loggerIcon } from '@src/constant/logger_icon.js';
 import { LogManager } from '@src/module/logger.js';
@@ -9,13 +10,12 @@ import { loggerUrl } from '@src/module/logger_url.js';
 import { isNode } from '@src/util/validation.js';
 
 import type { LoggerStyleParameters } from '@src/type/logger_method_type.js';
-import type { LoggerParameters, LoggerClassParameters } from '@src/type/logger_options.js';
+import type { LoggerParameters } from '@src/type/logger_options.js';
 
 const log = new LogManager();
 
 export type {
   LoggerParameters,
-  LoggerClassParameters,
   LoggerStyleParameters
 };
 
@@ -30,5 +30,6 @@ export {
   loggerStyle,
   loggerEmoji,
   loggerColumn,
-  LoggerLoader
+  LoggerLoader,
+  defaultLogger
 };
