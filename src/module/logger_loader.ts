@@ -9,6 +9,7 @@ import type { LoggerLoaderParameters } from '@src/type/logger_options.js';
 
 class LoggerLoader {
   private readonly color: string = colorAnsi.blueBright;
+  private readonly finalMessage: string = `Loading... ${loggerStyle.ansi(loggerIcon.check, { color: colorAnsi.green })}`;
   private frameIndex = 0;
   private readonly message: string = 'Loading...';
   private readonly position: 'left' | 'right' = 'right';
@@ -20,10 +21,12 @@ class LoggerLoader {
     message,
     position,
     color,
+    finalMessage,
     showTimestamp,
     type
   }: LoggerLoaderParameters) {
     this.message = message;
+    this.finalMessage = finalMessage ?? this.finalMessage;
     this.position = position ?? this.position;
     this.color = color ?? this.color;
     this.showTimestamp = showTimestamp ?? this.showTimestamp;
@@ -36,23 +39,20 @@ class LoggerLoader {
     const timeText = loggerStyle.ansi(getTime(), { color: colorAnsi.gray });
     const time = this.showTimestamp ? `${timeText} ` : '';
 
-    process.stdout.write('\u001b[?25l');
-
     this.timer = setInterval(() => {
       const frame = loggerStyle.ansi(loaderStyle[this.type][this.frameIndex] as string, { color: this.color });
-      const message = loggerStyle.ansi(this.message, { color: this.color });
 
       if (this.position === 'left') {
-        process.stdout.write(`\r${time}${frame} ${message} `);
+        process.stdout.write(`\r${time}${frame} ${this.message}`);
       } else {
-        process.stdout.write(`\r${time}${message} ${frame}`);
+        process.stdout.write(`\r${time}${this.message} ${frame}`);
       }
 
       this.frameIndex = (this.frameIndex + 1) % loaderStyle[this.type].length;
     }, 80);
   }
 
-  public stop (finalMessage?: string, symbol = loggerIcon.check) {
+  public stop () {
     if (this.timer) {
       clearInterval(this.timer);
       this.timer = null;
@@ -62,16 +62,8 @@ class LoggerLoader {
 
     const timeText = loggerStyle.ansi(getTime(), { color: colorAnsi.gray });
     const time = this.showTimestamp ? `${timeText} ` : '';
-    const message = loggerStyle.ansi(finalMessage ?? this.message, { color: this.color });
-    const symbolStyled = loggerStyle.ansi(symbol, { color: colorAnsi.greenBright });
 
-    if (this.position === 'left') {
-      process.stdout.write(`\r\u001b[K${time}${symbolStyled} ${message} \n`);
-    } else {
-      process.stdout.write(`\r\u001b[K${time}${message} ${symbolStyled}\n`);
-    }
-
-    process.stdout.write('\u001b[?25h');
+    process.stdout.write(`\r\u001b[K${time}${this.finalMessage}\n`);
   }
 }
 
