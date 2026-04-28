@@ -171,8 +171,6 @@ You can customize the logger by passing an options object to the `Logger` class 
 - `blankBelow` (boolean): A flag to add a blank line below the log message.
 - `icon` (string): A custom icon to be displayed before the log message (only for ansi).
 - `emoji` (string): A custom emoji to be displayed before the log message (only for browser).
-- `ansi` (object): An object to customize ANSI styles for terminal logs, with properties `color` and `bg` for text color and background color respectively.
-- `css` (object): An object to customize CSS styles for browser logs, with properties `color` and `bg` for text color and background color respectively.
 
 ### Log level specific styles
 
@@ -192,29 +190,12 @@ const logger = new LogManager({
   isDev: true,
   showTimestamp: true,
   blankAbove: false,
-  blankBelow: false,
-  info: {
-    icon: '\uebc6',
-    emoji: 'ℹ️',
-  },
-  setup: {
-    icon: '\uebd7',
-    emoji: '⚙️',
-    ansi: {
-      color: '\u001b[0;36m',
-      bg: '\u001b[46m'
-    }
-  },
+  blankBelow: false
 });
 
 logger.info('This is an info message');
 logger.setup('This is a setup message');
 ```
-
-Resulting in this:
-
-<img src="./.github/asset/image/preview_global.png" width="100%" />
-<img src="./.github/asset/image/preview_global_browser.png" width="100%" />
 
 <br />
 
@@ -228,20 +209,9 @@ const log = new LogManager();
 log.info('This is an info message with custom styles', {
   prefix: '[Custom Prefix]',
   showTimestamp: false,
-  icon: '\uebc6',
-  emoji: 'ℹ️',
-  ansi: {
-    color: '\u001b[0;36m',
-    bg: '\u001b[46m'
-  }
 });
 log.success('This is a success message', { blankAbove: true });
 ```
-
-Resulting in this:
-
-<img src="./.github/asset/image/preview_custom_log.png" width="100%" />
-<img src="./.github/asset/image/preview_custom_log_browser.png" width="100%" />
 
 <br />
 
@@ -302,7 +272,7 @@ You have the option to customize the loader message, position and color. You can
 - `position` (string): The position of the loader, can be 'left', 'right' or 'center'.
 - `color` (string): The color of the loader, can be any valid ANSI color code for terminal or any valid CSS color for browser.
 - `showTimestamp` (boolean): A flag to enable or disable timestamps in loader messages.
-- `type` (string): The type of the loader animation, can be 'line', 'dots', 'bounce' or 'circle' or 'grow'.
+- `type` (string): The type of the loader animation, can be 'line', 'dots', 'bounce' or 'circle', 'aesthetic', 'binary' or 'grow'.
 
 <br />
 
