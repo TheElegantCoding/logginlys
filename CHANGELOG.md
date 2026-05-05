@@ -16,6 +16,12 @@ The list of changes have the description - commit - author.
 
 ## Released
 
+## 🚀 Version [4.0.2] - 2026-05-05
+
+- **refactor:** update gitlys dependency to version 2.1.4 [`3e6d401`](https://github.com/TheElegantCoding/loglys/commit/3e6d401) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **refactor:** update default logger colors to use white for better visibility [`c6ebc87`](https://github.com/TheElegantCoding/loglys/commit/c6ebc87) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+- **refactor:** standardize formatting of files array in package.json [`a3fb4d2`](https://github.com/TheElegantCoding/loglys/commit/a3fb4d2) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
+
 ## 🚀 Version [4.0.1] - 2026-04-28
 
 - **refactor:** update release script to include build step [`fa2f9ee`](https://github.com/TheElegantCoding/loglys/commit/fa2f9ee) by [`@TheElegantCoding`](https://github.com/TheElegantCoding)
