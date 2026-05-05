@@ -11,15 +11,15 @@ const defaultLogger = {
     showBadge: true,
     ansi: {
       badge: loggerStyle.ansi(` ${loggerIcon.error} ERROR `, {
-        color: colorAnsi.red,
+        color: colorAnsi.white,
         bg: colorAnsi.bgRed,
         bold: true
       }),
-      color: colorAnsi.red,
+      color: colorAnsi.white,
       bg: colorAnsi.bgRed
     },
     css: {
-      color: colorCss.red,
+      color: colorCss.white,
       bg: colorCss.bgRed
     }
   },
@@ -30,15 +30,15 @@ const defaultLogger = {
     showBadge: true,
     ansi: {
       badge: loggerStyle.ansi(` ${loggerIcon.info} INFO `, {
-        color: colorAnsi.blue,
+        color: colorAnsi.white,
         bg: colorAnsi.bgBlue,
         bold: true
       }),
-      color: colorAnsi.blue,
+      color: colorAnsi.white,
       bg: colorAnsi.bgBlue
     },
     css: {
-      color: colorCss.blue,
+      color: colorCss.white,
       bg: colorCss.bgBlue
     }
   },
@@ -49,15 +49,15 @@ const defaultLogger = {
     showBadge: true,
     ansi: {
       badge: loggerStyle.ansi(` ${loggerIcon.http} HTTP `, {
-        color: colorAnsi.blueBright,
+        color: colorAnsi.white,
         bg: colorAnsi.bgBlueBright,
         bold: true
       }),
-      color: colorAnsi.blueBright,
+      color: colorAnsi.white,
       bg: colorAnsi.bgBlueBright
     },
     css: {
-      color: colorCss.blueBright,
+      color: colorCss.white,
       bg: colorCss.bgBlueBright
     }
   },
@@ -68,15 +68,15 @@ const defaultLogger = {
     showBadge: true,
     ansi: {
       badge: loggerStyle.ansi(` ${loggerIcon.warning} WARNING `, {
-        color: colorAnsi.yellow,
+        color: colorAnsi.white,
         bg: colorAnsi.bgYellow,
         bold: true
       }),
-      color: colorAnsi.yellow,
+      color: colorAnsi.white,
       bg: colorAnsi.bgYellow
     },
     css: {
-      color: colorCss.yellow,
+      color: colorCss.white,
       bg: colorCss.bgYellow
     }
   },
@@ -87,15 +87,15 @@ const defaultLogger = {
     showBadge: true,
     ansi: {
       badge: loggerStyle.ansi(` ${loggerIcon.check} SUCCESS `, {
-        color: colorAnsi.green,
+        color: colorAnsi.white,
         bg: colorAnsi.bgGreen,
         bold: true
       }),
-      color: colorAnsi.green,
+      color: colorAnsi.white,
       bg: colorAnsi.bgGreen
     },
     css: {
-      color: colorCss.green,
+      color: colorCss.white,
       bg: colorCss.bgGreen
     }
   },
@@ -106,15 +106,15 @@ const defaultLogger = {
     showBadge: true,
     ansi: {
       badge: loggerStyle.ansi(` ${loggerIcon.debug} DEBUG `, {
-        color: colorAnsi.purple,
+        color: colorAnsi.white,
         bg: colorAnsi.bgPurple,
         bold: true
       }),
-      color: colorAnsi.purple,
+      color: colorAnsi.white,
       bg: colorAnsi.bgPurple
     },
     css: {
-      color: colorCss.purple,
+      color: colorCss.white,
       bg: colorCss.bgPurple
     }
   },
@@ -125,15 +125,15 @@ const defaultLogger = {
     showBadge: true,
     ansi: {
       badge: loggerStyle.ansi(` ${loggerIcon.log} LOG `, {
-        color: colorAnsi.gray,
+        color: colorAnsi.white,
         bg: colorAnsi.bgGray,
         bold: true
       }),
-      color: colorAnsi.gray,
+      color: colorAnsi.white,
       bg: colorAnsi.bgGray
     },
     css: {
-      color: colorCss.gray,
+      color: colorCss.white,
       bg: colorCss.bgGray
     }
   },
@@ -144,15 +144,15 @@ const defaultLogger = {
     showBadge: true,
     ansi: {
       badge: loggerStyle.ansi(` ${loggerIcon.rocket} SETUP `, {
-        color: colorAnsi.cyan,
+        color: colorAnsi.white,
         bg: colorAnsi.bgCyan,
         bold: true
       }),
-      color: colorAnsi.cyan,
+      color: colorAnsi.white,
       bg: colorAnsi.bgCyan
     },
     css: {
-      color: colorCss.cyan,
+      color: colorCss.white,
       bg: colorCss.bgCyan
     }
   }
