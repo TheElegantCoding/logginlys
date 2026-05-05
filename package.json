@@ -49,7 +49,7 @@
   "devDependencies": {
     "@types/node": "^25.6.0",
     "eslint-config-universal-code": "^1.0.19",
-    "gitlys": "^2.0.1",
+    "gitlys": "^2.1.4",
     "tsup": "^8.5.1",
     "typescript": "^6.0.2"
   }
