@@ -43,13 +43,14 @@
     "postinstall": "bunx gitlys init",
     "release": "bun run build && bunx gitlys release",
     "dev": "bun --watch src/playground/index.ts",
-    "lint": "eslint . --fix ",
-    "build": "tsup"
+    "type-check": "tsc --noEmit",
+    "lint": "eslint . --fix --cache",
+    "build": "bun run lint && bun run type-check && tsup"
   },
   "devDependencies": {
-    "@types/node": "^26.6.3",
-    "eslint-config-universal-code": "^1.0.19",
-    "gitlys": "^2.2.1",
+    "@types/node": "^26.6.4",
+    "eslint-config-universal-code": "^1.1.4",
+    "gitlys": "^2.2.3",
     "tsup": "^8.5.1",
     "typescript": "^6.0.2"
   }
